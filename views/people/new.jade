@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+
+
+
+  .container-theme-showcase
+    h1.well Add A Person
+    br
+    br
+    if errors
+     .alert.alert-danger
+      
+      for error in errors
+       p= error
+
+   form(action='/people', method="post")
+     .col-md-6
+      .form-group
+        label Name
+        input.form-control(type="text" name="name")
+        br
+
+      .form-group
+        label Hobby
+        input.form-control(type="text" name="hobby")
+        br
+
+           
+      Button(type="submit") Create a Person
+      

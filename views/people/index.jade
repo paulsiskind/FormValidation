@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+
+  .container-theme-showcase
+
+      h1 Showing People
+
+
+      table(class='table table-striped')
+        thead
+          tr
+           th Name 
+           th Hobby 
+        tbody
+         for data in allPeople
+          tr
+            td= data.name
+            td= data.hobby
+
+      button(type='link' class='btn btn-info')
+       a(href="/people/new") New Person
